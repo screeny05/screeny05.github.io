@@ -1,0 +1,28 @@
+$main-color: #1B2B32;
+$accent-color: #37646F;
+$background-color: #fefefe;
+$code-background-color: #1D1F21;
+$code-text-color: #C5C8C6;
+
+
+$grid-columns: 12;
+
+
+$base-font-size: 16px;
+$base-line-height: 1.5rem;
+$base-font-color: $main-color;
+$code-font-size: .8rem;
+
+$display-font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$text-font-family: 'Merriweather', 'Times New Roman', serif;
+$code-font-family: 'Monoid', monospace;
+$base-font-family: $display-font-family;
+$heading-font-family: $display-font-family;
+
+
+$content-border-radius: .3rem;
+$content-padding: 1rem;
+$content-max-width: 700px;
+
+
+$global-font-size-breakpoints: 500px 600px 700px;

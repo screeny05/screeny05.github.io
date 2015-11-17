@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<h1 class="page-heading">Posts</h1>
+<ul>
+    {% for post in site.posts %}
+        {% if forloop.index <= 5 %}
+        <li>
+            <a href="{{ post.url | prepend: site.baseurl }}" class="post-title"><h1>{{ post.title }}</h1></a>
+        </li>
+        {% else %}
+        <li>
+            <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+            .
+            <span class="post-cat">{{ post.categories[0] }}</span>
+            .
+            <a href="{{ post.url | prepend: site.baseurl }}" class="post-title">{{ post.title }}</a>
+            <p>{{ post.excerpt }}</p>
+        </li>
+        {% endif %}
+    {% endfor %}
+</ul>

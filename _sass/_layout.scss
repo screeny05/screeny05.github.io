@@ -1,0 +1,48 @@
+.row:after,
+.clear:after {
+    content: '';
+    @include clearfix();
+}
+
+%col-x {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+@for $i from 1 through $grid-columns {
+    $cell-width: 100% / $grid-columns * $i;
+
+    .col-#{$i} {
+        @extend %col-x;
+        width: $cell-width;
+    }
+
+    .span-#{$i} {
+        margin-left: $cell-width;
+    }
+}
+
+.row-2-padding > div:first-child {
+    padding-right: $content-padding / 2;
+}
+.row-2-padding > div:last-child {
+    padding-left: $content-padding / 2;
+}
+.row-padding {
+    padding: $content-padding;
+}
+.content-maxwidth {
+    display: block;
+    max-width: $content-max-width;
+    margin: 0 auto;
+}
+
+/* set responsive font-size to scale everything */
+$i: 0;
+@each $breakpoint in $global-font-size-breakpoints {
+    @media screen and (min-width: $breakpoint) {
+        body, html { font-size: $base-font-size + $i; }
+    }
+    $i: $i + 1;
+}

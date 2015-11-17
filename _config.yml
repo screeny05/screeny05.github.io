@@ -1,0 +1,34 @@
+# Site settings
+title: scn.cx
+email: sl@scn.cx
+description: >
+  A blog about programming, things, stuff and alike
+baseurl: ""
+url: "https://scn.cx"
+permalink: /blog/:title.html
+excerpt_separator: <!-- more -->
+
+codepen_username: screeny05
+github_username:  screeny05
+linkedin_username: screeny
+
+# Build settings
+markdown: kramdown
+
+defaults:
+    -
+        scope:
+            path: ""
+            type: "posts"
+        values:
+            layout: "post"
+            author: "Sebastian Langer"
+            coverimage: false
+            detail_coverimage: true
+
+kramdown:
+    auto_id_prefix: "h-"
+    auto_id_stripping: on
+
+sass:
+    style: compressed
