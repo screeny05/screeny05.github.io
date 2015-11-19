@@ -19,12 +19,18 @@ defaults:
     -
         scope:
             path: ""
+        values:
+            lang: "en"
+    -
+        scope:
+            path: ""
             type: "posts"
         values:
             layout: "post"
             author: "Sebastian Langer"
             coverimage: false
             detail_coverimage: true
+            lang: "de"
 
 kramdown:
     auto_id_prefix: "h-"

@@ -1,13 +1,18 @@
-<!DOCTYPE html>
-<html>
-{% include head.html %}
-<body>
-    {% include header.html %}
+---
+layout: blank
+---
+{% include header.html %}
 
-    <div class="content-maxwidth">
-        {{ content }}
+{% if page.hero %}
+    <div class="hero">
+        <div class="content-max-width content-padding">
+            <h1>{{ page.hero }}</h1>
+        </div>
     </div>
+{% endif %}
 
-    {% include footer.html %}
-</body>
-</html>
+<main class="content-maxwidth content-padding">
+    {{ content }}
+</main>
+
+{% include footer.html %}

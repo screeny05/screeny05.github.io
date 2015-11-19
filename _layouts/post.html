@@ -1,16 +1,49 @@
 ---
 layout: default
 ---
+
+{% assign m = page.date | date: "%-m" %}
+{% case m %}
+    {% when '1'  %}{% assign m = "Januar" %}
+    {% when '2'  %}{% assign m = "Februar" %}
+    {% when '3'  %}{% assign m = "März" %}
+    {% when '4'  %}{% assign m = "April" %}
+    {% when '5'  %}{% assign m = "Mai" %}
+    {% when '6'  %}{% assign m = "Juni" %}
+    {% when '7'  %}{% assign m = "Juli" %}
+    {% when '8'  %}{% assign m = "August" %}
+    {% when '9'  %}{% assign m = "September" %}
+    {% when '10' %}{% assign m = "Oktober" %}
+    {% when '11' %}{% assign m = "November" %}
+    {% when '12' %}{% assign m = "Dezember" %}
+{% endcase %}
+
+{% assign dy = page.date | date: "%a" %}
+{% case dy %}
+    {% when 'Mon' %}{% assign dy = "Montag" %}
+    {% when 'Tue' %}{% assign dy = "Dienstag" %}
+    {% when 'Wed' %}{% assign dy = "Mittwoch" %}
+    {% when 'Thu' %}{% assign dy = "Donnerstag" %}
+    {% when 'Fri' %}{% assign dy = "Freitag" %}
+    {% when 'Sat' %}{% assign dy = "Samstag" %}
+    {% when 'Sun' %}{% assign dy = "Sonntag" %}
+{% endcase %}
+
 <article class="post">
-    <header>
+    <header class="post-header">
         <h1>{{ page.title }}</h1>
         <p class="post-meta">
-            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%b %-d, %Y" }}</time>
-            {% if page.author %} • {{ page.author }}{% endif %}
+            <time class="meta-time" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d" }}. {{ m }} {{ page.date | date: "%Y" }}</time>
+            •
+            <span class="meta-author">{{ page.author }}</span>
         </p>
     </header>
 
     <div class="post-content">
         {{ content }}
     </div>
+
+    <footer class="post-footer">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ dy }}, {{ page.date | date: "%-d" }}. {{ m }} {{ page.date | date: "%Y" }}</time>
+    </footer>
 </article>

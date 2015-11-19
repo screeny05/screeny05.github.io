@@ -1,8 +1,22 @@
 ---
 ---
 
-@import "reset";
-@import "base";
-@import "layout";
-@import "typography";
-@import "syntax-highlighting";
+@import "helpers/variables";
+@import "helpers/utilities";
+
+@import "base/reset";
+@import "base/typography";
+
+@import "layout/grid";
+@import "layout/containers";
+@import "layout/responsive";
+
+@import "components/code";
+@import "components/hero";
+@import "components/hamburger";
+
+.post        { @import "partials/post"; }
+.site-header { @import "partials/header"; }
+.site-footer { @import "partials/footer"; }
+
+.post-overview { @import "pages/post-overview"; }
