@@ -1,0 +1,16 @@
+.row-2-padding > div:first-child {
+    padding-right: $content-padding / 2;
+}
+.row-2-padding > div:last-child {
+    padding-left: $content-padding / 2;
+}
+
+.content-padding {
+    padding: $content-padding;
+}
+
+.content-maxwidth {
+    display: block;
+    max-width: $content-max-width;
+    margin: 0 auto;
+}

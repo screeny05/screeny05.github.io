@@ -1,0 +1,202 @@
+@mixin clearfix() {
+    display: block;
+    height: 0;
+    font-size: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+@mixin horizontal-text-shadow($color: $background-color, $count: 3) {
+    $shadows: ();
+    $shadows: append($shadows, 0  1px 0 $color, comma);
+    $shadows: append($shadows, 0 -1px 0 $color, comma);
+    @for $i from 1 through $count {
+        $shadows: append($shadows,  1px * $i 0 0 $color, comma);
+        $shadows: append($shadows, -1px * $i 0 0 $color, comma);
+    }
+    text-shadow: $shadows;
+}
+
+@mixin filter($filter...) {
+    -webkit-filter: $filter;
+            filter: $filter;
+}
+
+@mixin linear-gradient($gradient...) {
+    background-image: -webkit-linear-gradient($gradient);
+    background-image:         linear-gradient($gradient);
+}
+
+@mixin selection($background, $color: inherit, $text-shadow: none) {
+    * {
+        &::-webkit-selection { background: $background; color: $color; text-shadow: $text-shadow; }
+           &::-moz-selection { background: $background; color: $color; text-shadow: $text-shadow; }
+                &::selection { background: $background; color: $color; text-shadow: $text-shadow; }
+    }
+}
+
+@mixin hyphenate() {
+    -ms-word-break: break-all;
+        word-break: break-all;
+        word-break: break-word;
+
+    -webkit-hyphens: auto;
+       -moz-hyphens: auto;
+        -ms-hyphens: auto;
+            hyphens: auto;
+
+    -webkit-hyphenate-limit-lines: 2;
+       -moz-hyphenate-limit-lines: 2;
+        -ms-hyphenate-limit-lines: 2;
+            hyphenate-limit-lines: 2;
+}
+
+@mixin calc($property, $fallback, $calc) {
+    #{$property}: $fallback;
+    #{$property}: -webkit-calc(#{$calc});
+    #{$property}:    -moz-calc(#{$calc});
+    #{$property}:         calc(#{$calc});
+}
+
+@mixin css-triangle($color: #000, $width: 1rem, $height: 1rem, $direction: down) {
+    width: 0;
+    height: 0;
+
+    @if $direction == right {
+        border-top: ($height / 2) solid transparent;
+        border-bottom: ($height / 2) solid transparent;
+        border-left: $width solid $color;
+    } @else if $direction == left {
+        border-top: ($height / 2) solid transparent;
+        border-bottom: ($height / 2) solid transparent;
+        border-right: $width solid $color;
+    } @else if $direction == up {
+        border-left: ($width / 2) solid transparent;
+        border-right: ($width / 2) solid transparent;
+        border-bottom: $height solid $color;
+    } @else if $direction == down {
+        border-left: ($width / 2) solid transparent;
+        border-right: ($width / 2) solid transparent;
+        border-top: $height solid $color;
+    } @else if $direction == top-left {
+        border-right: $width solid transparent;
+        border-top: $height solid $color;
+    } @else if $direction == top-right {
+        border-left: $width solid transparent;
+        border-top: $height solid $color;
+    } @else if $direction == bottom-left {
+        border-right: $width solid transparent;
+        border-bottom: $height solid $color;
+    } @else if $direction == bottom-right {
+        border-left: $width solid transparent;
+        border-bottom: $height solid $color;
+    }
+}
+
+@mixin unselectable {
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+}
+
+@mixin transition($attribute, $time) {
+    -webkit-transition: $attribute $time;
+       -moz-transition: $attribute $time;
+        -ms-transition: $attribute $time;
+         -o-transition: $attribute $time;
+            transition: $attribute $time;
+}
+
+@mixin flexbox {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+@mixin flex($flex-width) {
+    -webkit-box-flex: $flex-width;
+       -moz-box-flex: $flex-width;
+            box-flex: $flex-width;
+    -webkit-flex: $flex-width;
+        -ms-flex: $flex-width;
+            flex: $flex-width;
+}
+
+@mixin box-ordinal($order) {
+    -webkit-box-ordinal-group: $order;
+       -moz-box-ordinal-group: $order;
+            box-ordinal-group: $order;
+    -ms-flex-order: $order;
+     -webkit-order: $order;
+             order: $order;
+}
+
+@mixin justify-content($direction) {
+    -webkit-box-pack: $direction;
+       -moz-box-pack: $direction;
+            box-pack: $direction;
+    -webkit-justify-content: $direction;
+            justify-content: $direction;
+}
+
+@mixin align-items($direction) {
+    $direction-old: $direction;
+    @if($direction == flex-start) {
+        $direction-old: start;
+    } @elseif($direction == flex-end) {
+        $direction-old: end;
+    } @elseif($direction == flex-center) {
+        $direction-old: center;
+    }
+    -webkit-box-align: $direction-old;
+       -moz-box-align: $direction-old;
+            box-align: $direction-old;
+    -ms-flex-align: $direction-old;
+    -webkit-align-items: $direction;
+            align-items: $direction;
+}
+
+@mixin align-content($direction) {
+    -webkit-align-content: $direction;
+            align-content: $direction;
+}
+
+@mixin flex-direction($direction) {
+    $direction-old: $direction;
+    @if($direction == row or $direction == row-reverse) {
+        $direction-old: horizontal;
+    } @elseif($direction == column or $direction == column-reverse) {
+        $direction-old: vertical;
+    }
+    -webkit-box-orient: $direction-old;
+       -moz-box-orient: $direction-old;
+            box-orient: $direction-old;
+    -webkit-flex-direction: $direction;
+        -ms-flex-direction: $direction;
+            flex-direction: $direction;
+}
+
+@mixin flex-wrap($wrap) {
+    -webkit-flex-wrap: $wrap;
+        -ms-flex-wrap: $wrap;
+            flex-wrap: $wrap;
+}
+
+@mixin tap-color($color) {
+    -webkit-tap-highlight-color: $color;
+}
+
+@mixin object-fit($fit) {
+    -o-object-fit: $fit;
+       object-fit: $fit;
+}
+
+.va-center {
+    display: inline-block;
+    vertical-align: middle;
+}

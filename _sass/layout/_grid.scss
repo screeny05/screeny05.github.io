@@ -1,0 +1,24 @@
+.row:after,
+.clear:after {
+    content: '';
+    @include clearfix();
+}
+
+%col-x {
+    position: relative;
+    display: block;
+    float: left;
+}
+
+@for $i from 1 through $grid-columns {
+    $cell-width: 100% / $grid-columns * $i;
+
+    .col-#{$i} {
+        @extend %col-x;
+        width: $cell-width;
+    }
+
+    .span-#{$i} {
+        margin-left: $cell-width;
+    }
+}

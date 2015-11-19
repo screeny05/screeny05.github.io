@@ -1,0 +1,29 @@
+$main-color: #1B2B32;
+$accent-color: #37646F;
+$background-color: #fefefe;
+$code-background-color: #f6f6f3;
+$code-text-color: #002b36;
+
+
+$grid-columns: 12;
+
+
+$base-font-size: 16px;
+$base-line-height: 1.4rem;
+$base-font-color: $main-color;
+$code-font-size: .8rem;
+
+$display-font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$text-font-family: 'Merriweather', 'Times New Roman', serif;
+$smallcaps-font-family: 'Alegreya SC', serif;
+$code-font-family: monospace;
+$base-font-family: $display-font-family;
+$heading-font-family: $display-font-family;
+
+
+$content-border-radius: .3rem;
+$content-padding: 1rem;
+$content-max-width: 720px;
+
+
+$global-font-size-breakpoints: 500px 600px 700px;

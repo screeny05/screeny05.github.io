@@ -1,0 +1,60 @@
+.hero {
+    padding: 2rem 0;
+    background: rebeccapurple;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    text-align: center;
+
+    &.hero-big {
+        padding: 4rem 0;
+    }
+
+    &.hero-stars {
+        background-color: #0E546E;
+        background-image: url("https://c1.staticflickr.com/5/4108/5161779163_facfd2df93_b.jpg");
+    }
+}
+
+
+.hero-logo {
+    display: inline-block;
+    color: rgba(#fff, .9);
+    @include filter(drop-shadow(0 0 15px rgba(#000, .6)));
+
+    .logo-title {
+        margin: 0 auto;
+        font-weight: 400;
+        font-family: monospace;
+        letter-spacing: -.2rem;
+        @include calc(font-size, 5rem, "4rem + 2vw");
+        @include calc(line-height, 5rem, "4rem + 2vw");
+    }
+
+    .logo-subtitle {
+        font-size: 1.2rem;
+        font-weight: 300;
+        @include flexbox();
+        @include flex-direction(row);
+        @include align-items(center);
+
+        .logo-subtitle-line {
+            @include flex(1 0 auto);
+            background: rgba(#fff, .8);
+            height: .2rem;
+            border-radius: $content-border-radius;
+        }
+
+        &:first-child {
+            margin-bottom: -1rem;
+        }
+
+        &:first-child .logo-subtitle-text {
+            padding-right: $content-padding;
+        }
+
+        &:last-child .logo-subtitle-text {
+            padding-left: $content-padding;
+        }
+    }
+}

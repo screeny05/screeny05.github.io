@@ -1,0 +1,8 @@
+/* set responsive font-size to scale everything */
+$i: 1;
+@each $breakpoint in $global-font-size-breakpoints {
+    @media screen and (min-width: $breakpoint) {
+        body, html { font-size: $base-font-size + $i; }
+    }
+    $i: $i + 1;
+}

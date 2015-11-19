@@ -1,0 +1,50 @@
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+hr,
+dl,
+dd,
+ol,
+ul,
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    color: $base-font-color;
+    background: $background-color;
+    font-family: $base-font-family;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-feature-settings: "kern" on, "calt" on, "liga" on;
+       -moz-font-feature-settings: "kern" on, "calt" on, "liga" on;
+         -o-font-feature-settings: "kern" on, "calt" on, "liga" on;
+            font-feature-settings: "kern" on, "calt" on, "liga" on;
+    font-smoothing: antialiased;
+    font-kerning: normal;
+}
+
+
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+@include selection(rgba(#98A89E, .5));
