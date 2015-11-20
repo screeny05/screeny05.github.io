@@ -42,6 +42,7 @@ code {
     font-family: $code-font-family;
     font-size: $code-font-size;
     padding: 0 .5rem;
+    @include box-decoration-break();
 }
 
 a > code {

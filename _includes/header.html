@@ -1,15 +1,10 @@
 <header class="site-header">
-    <div class="content-maxwidth">
-        <a href="{{ site.baseurl }}/">{{ site.title }}</a>
-        <nav class="site-nav">
-            {% for my_page in site.pages %}
-                {% if my_page.title %}
-                    <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-                {% endif %}
-            {% endfor %}
-        </nav>
+    <div class="content-maxwidth content-padding">
+        <a class="hamburger" href="#"></a>
     </div>
 </header>
+
+
 
 <div class="hero hero-big hero-stars">
     <div class="content-maxwidth content-padding hero-logo">
@@ -27,6 +22,21 @@
         </div>
 
     </div>
+
+    <!--<nav class="nav nav-toggle-menu">
+        <a href="#">Stuff</a>
+    </nav>-->
 </div>
 
-<div class="breadcrumbs center">Foo</div>
+
+
+<!--
+<a href="{{ site.baseurl }}/">{{ site.title }}</a>
+<nav class="site-nav">
+    {% for my_page in site.pages %}
+        {% if my_page.title %}
+            <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+        {% endif %}
+    {% endfor %}
+</nav>
+-->

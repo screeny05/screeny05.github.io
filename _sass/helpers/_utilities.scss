@@ -27,12 +27,32 @@
     background-image:         linear-gradient($gradient);
 }
 
+@mixin repeating-linear-gradient($gradient...) {
+    background-image: -webkit-repeating-linear-gradient($gradient);
+    background-image:         repeating-linear-gradient($gradient);
+}
+
 @mixin selection($background, $color: inherit, $text-shadow: none) {
     * {
         &::-webkit-selection { background: $background; color: $color; text-shadow: $text-shadow; }
            &::-moz-selection { background: $background; color: $color; text-shadow: $text-shadow; }
                 &::selection { background: $background; color: $color; text-shadow: $text-shadow; }
     }
+}
+
+@mixin placeholder($color: inherit) {
+    * {
+        &::-webkit-input-placeholder { opacity: 1; color: $color; }
+             &:-ms-input-placeholder { opacity: 1; color: $color; }
+                  &:-moz-placeholder { opacity: 1; color: $color; }
+                 &::-moz-placeholder { opacity: 1; color: $color; }
+                      &::placeholder { opacity: 1; color: $color; }
+    }
+}
+
+@mixin box-decoration-break() {
+    -webkit-box-decoration-break: clone;
+            box-decoration-break: clone;
 }
 
 @mixin hyphenate() {

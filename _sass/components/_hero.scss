@@ -1,4 +1,5 @@
 .hero {
+    position: relative;
     padding: 2rem 0;
     background: rebeccapurple;
     background-size: cover;
@@ -11,15 +12,44 @@
     }
 
     &.hero-stars {
-        background-color: #0E546E;
-        background-image: url("https://c1.staticflickr.com/5/4108/5161779163_facfd2df93_b.jpg");
+        $background-color: $tangerine;
+        background-color: transparent;
+        background-image: -webkit-linear-gradient($background-color, $background-color), url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/mochaGrunge.png);
+        background-image:         linear-gradient($background-color, $background-color), url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/mochaGrunge.png);
+        background-blend-mode: overlay;
+
+        background-size: auto;
+    }
+
+    &.hero-stars:before,
+    &.hero-stars:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+
+    &.hero-stars:before {
+        top: 0;
+        background-image: url('/assets/img/dish.svg');
+        @include calc(background-size, 7rem, "6rem + 5vw");
+        background-repeat: no-repeat;
+        background-position: bottom center;
+    }
+
+    &.hero-stars:after {
+        height: 2rem;
+        background-image: url('/assets/img/terrain.svg');
+        background-repeat: repeat-x;
+        background-position: top center;
     }
 }
 
 
 .hero-logo {
     display: inline-block;
-    color: rgba(#fff, .9);
+    color: #fff;
     @include filter(drop-shadow(0 0 15px rgba(#000, .6)));
 
     .logo-title {
@@ -40,7 +70,7 @@
 
         .logo-subtitle-line {
             @include flex(1 0 auto);
-            background: rgba(#fff, .8);
+            background: #fff;
             height: .2rem;
             border-radius: $content-border-radius;
         }

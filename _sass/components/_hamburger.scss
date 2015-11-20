@@ -1,6 +1,33 @@
+$burger-color: #efefef;
+$burger-stroke-height: 1px;
+$burger-stroke-margin: .6rem;
+$burger-width: 2.2rem;
+
+
 .hamburger {
-    width: 3rem;
-    height: 2rem;
-    border-radius: $content-border-radius;
-    border: 1px solid #efefef;
+    display: block;
+    position: relative;
+    width: $burger-width;
+    height: $burger-stroke-height;
+    margin-top: $burger-stroke-margin;
+    background: $burger-color;
+    z-index: 1;
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        width: $burger-width;
+        height: $burger-stroke-height;
+        background: $burger-color;
+    }
+
+    &:before {
+        top: -$burger-stroke-margin;
+    }
+
+    &:after {
+        top: $burger-stroke-margin;
+    }
 }
