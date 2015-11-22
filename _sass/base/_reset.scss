@@ -14,9 +14,17 @@ dl,
 dd,
 ol,
 ul,
-figure {
+figure,
+input,
+textarea,
+nav {
     margin: 0;
     padding: 0;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
 }
 
 html,

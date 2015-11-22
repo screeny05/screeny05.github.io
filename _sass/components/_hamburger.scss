@@ -1,33 +1,88 @@
-$burger-color: #efefef;
-$burger-stroke-height: 1px;
-$burger-stroke-margin: .6rem;
-$burger-width: 2.2rem;
+.hamburger-toggle {
+    transform-origin: left;
+    @include transform(translateX(-100%));
+    @include transition(transform $burger-transition-time ease);
+}
 
+.hamburger-background {
+    position: absolute;
+    opacity: 0;
+    background: $nile-blue;
+    top: 0;
+    left: 0;
+    width: $burger-width + 2 * $content-padding;
+    height: $topnav-line-height + 2 * $content-padding;
+    z-index: 2;
+    @include transition(opacity $burger-transition-time ease);
+}
+
+.hamburger-checkbox {
+    position: absolute;
+    z-index: 4;
+    top: $content-padding;
+    left: $content-padding;
+    width: $burger-width;
+    height: $burger-height;
+    opacity: 0;
+    cursor: pointer;
+    @include tap-color(transparent);
+
+    &:checked ~ .hamburger {
+        > span:nth-child(2) {
+            @include transform(rotate(45deg));
+        }
+
+        > span:nth-child(3) {
+            @include transform(rotate(-45deg));
+        }
+
+        > span:first-child {
+            @include transform(translateY($burger-height / 2) scaleX(.5));
+            opacity: 0;
+        }
+
+        > span:last-child {
+            @include transform(translateY($burger-height / 2 * -1) scaleX(.5));
+            opacity: 0;
+        }
+    }
+
+    &:checked ~ .hamburger-background {
+        opacity: 1;
+    }
+
+    &:checked ~ .hamburger-toggle {
+        @include transform(translateX(0));
+    }
+}
 
 .hamburger {
     display: block;
-    position: relative;
+    position: absolute;
+    top: $content-padding;
+    left: $content-padding;
     width: $burger-width;
-    height: $burger-stroke-height;
-    margin-top: $burger-stroke-margin;
-    background: $burger-color;
-    z-index: 1;
+    height: $burger-height;
+    z-index: 3;
+    cursor: pointer;
+    @include tap-color(transparent);
 
-    &:before,
-    &:after {
-        content: '';
+    > span {
         position: absolute;
-        display: block;
-        width: $burger-width;
-        height: $burger-stroke-height;
         background: $burger-color;
+        height: $burger-stroke-height;
+        left: 0;
+        right: 0;
+        @include transition(transform $burger-transition-time ease, opacity $burger-transition-time ease);
     }
 
-    &:before {
-        top: -$burger-stroke-margin;
+    > span:nth-child(2),
+    > span:nth-child(3) {
+        top: $burger-height / 2;
+        @include transition(transform $burger-transition-time ease);
     }
 
-    &:after {
-        top: $burger-stroke-margin;
+    > span:last-child {
+        top: $burger-height;
     }
 }

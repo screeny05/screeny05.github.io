@@ -1,14 +1,29 @@
-<header class="site-header">
-    <div class="content-maxwidth content-padding">
-        <a class="hamburger" href="#"></a>
+<header class="hero hero-big hero-stars">
+
+    <div class="hamburger-container">
+        <input class="hamburger-checkbox" type="checkbox" id="hamburger-checkbox" role="button">
+        <label class="hamburger" for="hamburger-checkbox">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <div class="hamburger-background"></div>
+
+        <nav class="nav nav-toggle-menu hamburger-toggle">
+            <a href="#">Home</a>
+            <a href="#">Blog</a>
+            <a href="#">Projects</a>
+            {% for my_page in site.pages %}
+                {% if my_page.title %}
+                    <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+                {% endif %}
+            {% endfor %}
+        </nav>
     </div>
-</header>
 
-
-
-<div class="hero hero-big hero-stars">
     <div class="content-maxwidth content-padding hero-logo">
-
         <div class="logo-subtitle logo-subtitle-top">
             <span class="logo-subtitle-text">webdev</span>
             <div class="logo-subtitle-line"></div>
@@ -20,23 +35,6 @@
             <div class="logo-subtitle-line"></div>
             <span class="logo-subtitle-text">blog</span>
         </div>
-
     </div>
 
-    <!--<nav class="nav nav-toggle-menu">
-        <a href="#">Stuff</a>
-    </nav>-->
-</div>
-
-
-
-<!--
-<a href="{{ site.baseurl }}/">{{ site.title }}</a>
-<nav class="site-nav">
-    {% for my_page in site.pages %}
-        {% if my_page.title %}
-            <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-        {% endif %}
-    {% endfor %}
-</nav>
--->
+</header>

@@ -35,3 +35,15 @@ $content-max-width: 720px;
 
 
 $global-font-size-breakpoints: 500px 600px 700px;
+
+
+
+$burger-color: #efefef;
+$burger-stroke-height: 2px;
+$burger-stroke-margin: .6rem;
+$burger-width: 2rem;
+$burger-height: 1.4rem;
+$burger-transition-time: .3s;
+
+$topnav-line-height: $base-line-height;
+$topnav-background: darken($tangerine, 2);//#262626
