@@ -71,6 +71,20 @@
             hyphenate-limit-lines: 2;
 }
 
+@mixin transition($transitions...) {
+    -webkit-transition: $transitions;
+       -moz-transition: $transitions;
+         -o-transition: $transitions;
+            transition: $transitions;
+}
+
+@mixin transform($transform...) {
+    -webkit-transform: $transform;
+       -moz-transform: $transform;
+         -o-transform: $transform;
+            transform: $transform;
+}
+
 @mixin calc($property, $fallback, $calc) {
     #{$property}: $fallback;
     #{$property}: -webkit-calc(#{$calc});
@@ -120,14 +134,6 @@
          -moz-user-select: none;
           -ms-user-select: none;
               user-select: none;
-}
-
-@mixin transition($attribute, $time) {
-    -webkit-transition: $attribute $time;
-       -moz-transition: $attribute $time;
-        -ms-transition: $attribute $time;
-         -o-transition: $attribute $time;
-            transition: $attribute $time;
 }
 
 @mixin flexbox {

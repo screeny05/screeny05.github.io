@@ -12,12 +12,8 @@
     }
 
     &.hero-stars {
-        $background-color: $tangerine;
-        background-color: transparent;
-        background-image: -webkit-linear-gradient($background-color, $background-color), url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/mochaGrunge.png);
-        background-image:         linear-gradient($background-color, $background-color), url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/mochaGrunge.png);
-        background-blend-mode: overlay;
-
+        background-color: $tangerine;
+        background-image: url('/assets/img/grunge.jpg');
         background-size: auto;
     }
 
@@ -43,6 +39,7 @@
         background-image: url('/assets/img/terrain.svg');
         background-repeat: repeat-x;
         background-position: top center;
+        z-index: 1;
     }
 }
 

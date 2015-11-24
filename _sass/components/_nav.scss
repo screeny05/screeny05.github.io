@@ -1,8 +1,22 @@
-.nav {
-
-}
-
 .nav-toggle-menu {
-    background: #262626;
-    color: #efefef;
+    background: $topnav-background;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    padding-top: $burger-height + 2 * $content-padding;
+    padding-bottom: 2rem;
+    width: 50%;
+    max-width: 400px;
+    min-width: 200px;
+    z-index: 1;
+    @include flexbox();
+    @include flex-direction(column);
+
+    > a {
+        color: #efefef;
+        padding: ($content-padding / 2) $content-padding;
+        line-height: $topnav-line-height;
+        @include flex(1 0 auto);
+    }
 }

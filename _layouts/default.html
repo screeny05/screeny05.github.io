@@ -16,3 +16,23 @@ layout: blank
 </main>
 
 {% include footer.html %}
+
+<style id="header-terrain-scroll"></style>
+<script type="text/javascript">
+    var onDomReady = function(fn){
+        if(document.readyState != 'loading'){
+            fn();
+        } else {
+            document.addEventListener('DOMContentLoaded', fn);
+        }
+    };
+    onDomReady(function(){
+        var styleEl = document.getElementById('header-terrain-scroll');
+        document.addEventListener('scroll', function(e){
+            if(e.target !== document){
+                return;
+            }
+            //styleEl.innerHTML = '.hero.hero-stars:after { transform: translateX(-' + window.scrollY + 'px); }';
+        });
+    });
+</script>
