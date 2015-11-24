@@ -1,0 +1,8 @@
+.post dl {
+    dt > a {
+    }
+
+    dd {
+        margin: 0 0 $content-padding $content-padding;
+    }
+}
