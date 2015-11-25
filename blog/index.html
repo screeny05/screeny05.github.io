@@ -1,18 +1,23 @@
 ---
 layout: default
 class: post-overview
-hero: Posts
+hero: Blog
 ---
 
-<ul>
+<ul class="nav nav-posts">
     {% for post in site.posts %}
         <li>
             <a href="{{ post.url | prepend: site.baseurl }}">
-                <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
-                .
-                <span class="post-cat">{{ post.categories[0] }}</span>
-                &ndash;
-                <span class="post-title">{{ post.title }}</span>
+                <div class="post-cover" style="{% if post.coverimage %}background-image: url('{{ post.coverimage }}');{% endif %}{% if post.coverfillcolor %}background-size: auto;background-color:#{{ post.coverfillcolor }};{% endif %}">
+                    <span class="post-title-wrapper">
+                        <span class="post-title">{{ post.title }}</span>
+                    </span>
+                </div>
+                <div class="post-meta center small">
+                    <span class="post-cat">{{ post.categories[0] }}</span>
+                    ::
+                    <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
+                </div>
             </a>
         </li>
     {% endfor %}

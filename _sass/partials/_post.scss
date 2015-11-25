@@ -20,6 +20,15 @@ h3[id]:hover:before {
     opacity: 1;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $heading-font-color;
+}
+
 a {
     position: relative;
     text-decoration: none;
@@ -50,8 +59,6 @@ ol,
 ul,
 dl,
 p {
-    font-size: 1rem;
-    line-height: $base-line-height;
     margin: 0 0 $content-padding 0;
     font-family: $text-font-family;
     @include hyphenate();
@@ -62,18 +69,18 @@ p.article-lead {
     font-size: 1.2rem;
     font-family: $smallcaps-font-family;
     letter-spacing: .15rem;
-}
 
-p.article-lead::first-letter {
-    font-size: 5rem;
-    line-height: 4.5rem;
-    margin-right: .08em;
-    float: left;
-}
+    &:first-letter {
+        font-size: 5rem;
+        line-height: 4.5rem;
+        margin-right: .08em;
+        float: left;
+    }
 
-p.article-lead::after {
-    content: '';
-    @include clearfix();
+    &:after {
+        content: '';
+        @include clearfix();
+    }
 }
 
 img {
@@ -93,7 +100,7 @@ blockquote {
     border-radius: 0 5px 5px 0;
 }
 
-blockquote::before {
+blockquote:before {
     content: '';
     position: absolute;
     right: 100%;
@@ -105,4 +112,14 @@ blockquote::before {
 
 blockquote > :last-child {
     margin-bottom: 0;
+}
+
+.post-header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h1 {
+        color: $base-font-color;
+        margin-bottom: $content-padding;
+    }
 }

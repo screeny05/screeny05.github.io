@@ -35,6 +35,11 @@ h6 {
     font-family: $heading-font-family;
 }
 
+.small {
+    font-size: $small-font-size;
+    color: $small-font-color;
+}
+
 code {
     color: $code-text-color;
     background: $code-background-color;

@@ -7,6 +7,8 @@ tags:
     - AngularJS
     - DOM
     - RegEx
+coverimage: /assets/img/posts/angularjs.svg
+coverfillcolor: 353334
 ---
 Jeder der sich schon mal einen eigenen Chat in JavaScript zusammengebastelt hat,
 ist sicher auch auf so tolle Ideen wie Smileys und Bilder gekommen.

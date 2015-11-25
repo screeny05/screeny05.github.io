@@ -9,12 +9,9 @@
             <span></span>
         </label>
 
-        <div class="hamburger-background"></div>
-
         <nav class="nav nav-toggle-menu hamburger-toggle">
-            <a href="#">Home</a>
-            <a href="#">Blog</a>
-            <a href="#">Projects</a>
+            <a href="/blog/">Blog</a>
+            <a href="/projects/">Projects</a>
             {% for my_page in site.pages %}
                 {% if my_page.title %}
                     <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
@@ -23,7 +20,7 @@
         </nav>
     </div>
 
-    <div class="content-maxwidth content-padding hero-logo">
+    <a href="/" class="content-maxwidth content-padding hero-logo">
         <div class="logo-subtitle logo-subtitle-top">
             <span class="logo-subtitle-text">webdev</span>
             <div class="logo-subtitle-line"></div>
@@ -35,6 +32,6 @@
             <div class="logo-subtitle-line"></div>
             <span class="logo-subtitle-text">blog</span>
         </div>
-    </div>
+    </a>
 
 </header>

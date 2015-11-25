@@ -6,15 +6,16 @@
     background-position: center center;
     color: #fff;
     text-align: center;
+    overflow: hidden;
 
     &.hero-big {
         padding: 4rem 0;
     }
 
     &.hero-stars {
-        background-color: $tangerine;
-        background-image: url('/assets/img/grunge.jpg');
-        background-size: auto;
+        background-color: $topnav-base-background;
+        background-image: -webkit-linear-gradient(right, $topnav-base-background, $topnav-light-background);
+        background-image: linear-gradient(to right, $topnav-base-background, $topnav-light-background);
     }
 
     &.hero-stars:before,

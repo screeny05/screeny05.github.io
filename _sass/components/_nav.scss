@@ -1,7 +1,12 @@
+.nav {
+    list-style: none;
+    margin: 0;
+}
+
 .nav-toggle-menu {
-    background: $topnav-background;
+    background: $topnav-base-background;
     position: absolute;
-    left: 0;
+    right: 0;
     top: 0;
     bottom: 0;
     padding-top: $burger-height + 2 * $content-padding;
@@ -19,4 +24,108 @@
         line-height: $topnav-line-height;
         @include flex(1 0 auto);
     }
+}
+
+
+.nav-posts > li {
+    display: block;
+    position: relative;
+    float: left;
+    width: 50%;
+    margin-bottom: 2rem;
+    padding: 0 .5rem;
+
+    > a {
+        display: block;
+        border-radius: 2px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+        overflow: hidden;
+    }
+
+    .post-cover {
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 10.5rem;
+        overflow: hidden;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: $postnav-fallback-color-dark;
+        @include linear-gradient(30.2deg, $postnav-fallback-color-light 50%, $postnav-fallback-color-dark 50%);
+
+        &:after {
+            content: '';
+            position: absolute;
+            display: block;
+            opacity: .5;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            @include linear-gradient(149.8deg, rgba(#fff, .1) 50%, transparent 50%);
+        }
+    }
+
+    .post-title-wrapper {
+        position: absolute;
+        bottom: $content-padding;
+        left: $content-padding;
+        z-index: 1;
+    }
+
+    .post-title {
+        display: inline;
+        margin-top: 220px;
+        padding: .2rem .5rem;
+        background: $postnav-link-background;
+        color: $postnav-link-color;
+        @include box-decoration-break();
+    }
+
+    .post-excerpt {
+        height: 6rem;
+        position: relative;
+        border: 1px solid $postnav-fallback-color-dark;
+        border-top: none;
+        padding: $content-padding;
+        overflow: hidden;
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 2rem;
+            @include linear-gradient(rgba($postnav-background-color, .0), rgba($postnav-background-color, .8) 70%, $postnav-background-color);
+        }
+    }
+
+    &:nth-child(2n) {
+        padding-right: 0;
+    }
+
+    &:nth-child(2n+1) {
+        padding-left: 0;
+    }
+
+    &:hover .post-cover:after {
+        opacity: 0;
+    }
+
+    @media screen and (max-width: $content-max-width) {
+        width: 100%;
+
+        &:nth-child(2n),
+        &:nth-child(2n+1) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+.nav-posts:after {
+    content: '';
+    @include clearfix();
 }

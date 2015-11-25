@@ -4,10 +4,10 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+This is the Personal Website of Sebastian Langer. It is based on Jekyll, hosted on GitHub Pages and modified by myself.
 
-You can find the source code for the Jekyll new theme at:
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+All content and code snippets published under this site are licensed under the
+[CC BY-SA 4.0](http://creativecommons.org/licenses/by-sa/4.0/legalcode "Creative Commons Attribution-ShareAlike 4.0").
 
-You can find the source code for Jekyll at
-[jekyll](https://github.com/jekyll/jekyll)
+The Jekyll-Setup itself can be found in it's GitHub-repo:
+[screeny05/screeny05.github.io](https://github.com/screeny05/screeny05.github.io). It's licensed under the MIT-License

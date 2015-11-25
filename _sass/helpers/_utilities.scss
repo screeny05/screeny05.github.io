@@ -50,9 +50,12 @@
     }
 }
 
-@mixin box-decoration-break() {
-    -webkit-box-decoration-break: clone;
-            box-decoration-break: clone;
+@mixin box-decoration-break($val: clone) {
+    -webkit-box-decoration-break: $val;
+       -moz-box-decoration-break: $val;
+        -ms-box-decoration-break: $val;
+         -o-box-decoration-break: $val;
+            box-decoration-break: $val;
 }
 
 @mixin hyphenate() {

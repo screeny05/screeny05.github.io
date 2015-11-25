@@ -7,6 +7,8 @@ tags:
     - MySQL
     - node.js
     - Socket.IO
+coverimage: /assets/img/posts/nodejs.svg
+coverfillcolor: 46483D
 ---
 Mein aktuelles Abenteuer, welches davon handelt wie Ich SynchTube nachbaue bringt
 einiges an Erfahrung mit, bezüglich NodeJS. Und weil Ich hier ja schon so einen

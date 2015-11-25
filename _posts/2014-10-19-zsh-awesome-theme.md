@@ -6,7 +6,8 @@ tags:
     - Shell
     - ZSH
     - Linux
-coverimage: https://scn.cx/assets/img/screenshot-zsh-theme.png
+coverimage: /assets/img/posts/ohmyzsh.jpg
+coverfillcolor: 273238
 detail_coverimage: false
 ---
 

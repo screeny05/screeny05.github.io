@@ -4,6 +4,8 @@ date:   2015-11-24 14:36:02 +0100
 categories: links
 tags:
     - Emails
+coverimage: /assets/img/posts/link.svg
+coverfillcolor: 1A3140
 ---
 
 I'm trying to provide links on an (ir-)regular basis focusing around different topics each time.

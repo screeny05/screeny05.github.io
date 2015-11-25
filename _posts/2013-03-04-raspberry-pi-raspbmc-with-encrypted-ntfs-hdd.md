@@ -7,6 +7,8 @@ tags:
     - Linux
     - Truecrypt
     - Raspberry Pi
+coverimage: /assets/img/posts/raspberrypi.svg
+coverfillcolor: A30A36
 ---
 Ich bin seit einer Weile in Besitz eines Raspberry Pi’s und möchte euch ein
 kleines HowTo zur Seite geben damit ihr euren Pi sowohl als Heimkinosystem,

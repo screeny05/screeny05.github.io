@@ -5,10 +5,21 @@ $tangerine: #FF9666;
 $salomie:   #FFE184;
 $sidecar:   #F5E9BE;
 
+// colors - acat
+$cerise-red:  #D9304F;
+$big-stone:   #1A3140;
+$breaker-bay: #659FA6;
+$new-orleans: #F2D6A2;
+$froly:       #F2786D;
+
+$white: #fefefe;
+$gallery: #efefef;
+
+
 // base
-$main-color: #1B2B32;
-$accent-color: $elm;
-$background-color: #fefefe;
+$main-color: $big-stone;
+$accent-color: $cerise-red;
+$background-color: lighten($new-orleans, 19);
 $code-background-color: #f6f6f3;
 $code-text-color: #002b36;
 
@@ -19,6 +30,9 @@ $grid-columns: 12;
 $base-font-size: 16px;
 $base-line-height: 1.4rem;
 $base-font-color: $main-color;
+$heading-font-color: $accent-color;
+$small-font-color: desaturate(lighten($main-color, 30), 30%);
+$small-font-size: .8rem;
 $code-font-size: .8rem;
 
 $display-font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -43,7 +57,17 @@ $burger-stroke-height: 2px;
 $burger-stroke-margin: .6rem;
 $burger-width: 2rem;
 $burger-height: 1.4rem;
-$burger-transition-time: .3s;
+$burger-transition-time: .4s;
+$burger-active-background: darken($breaker-bay, 5);
 
 $topnav-line-height: $base-line-height;
-$topnav-background: darken($tangerine, 2);//#262626
+$topnav-base-background: $breaker-bay;
+$topnav-light-background: lighten($topnav-base-background, 5);
+
+
+$postnav-fallback-color-light: $breaker-bay;
+$postnav-fallback-color-dark: darken($breaker-bay, 5);
+$postnav-transition-time: .3s;
+$postnav-background-color: #fff;
+$postnav-link-background: $new-orleans;
+$postnav-link-color: $base-font-color;
