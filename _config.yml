@@ -2,14 +2,14 @@
 title: scn.cx
 email: sl@scn.cx
 description: >
-  A blog about programming, things, stuff and alike
+  A blog about tech, programming, timetraveling and alike.
 baseurl: ""
 url: "https://scn.cx"
 permalink: /blog/:title.html
 excerpt_separator: <!-- more -->
 
-codepen_username: screeny05
-github_username:  screeny05
+codepen_username:  screeny05
+github_username:   screeny05
 linkedin_username: screeny
 
 # Build settings

@@ -35,9 +35,19 @@ h6 {
     font-family: $heading-font-family;
 }
 
+p {
+    font-size: 1rem;
+    line-height: $base-line-height;
+}
+
 .small {
     font-size: $small-font-size;
     color: $small-font-color;
+}
+
+.big {
+    font-size: $big-font-size;
+    font-weight: $big-font-weight;
 }
 
 code {
@@ -76,4 +86,8 @@ ol {
 
 .right {
     text-align: right;
+}
+
+.justify {
+    text-align: justify;
 }

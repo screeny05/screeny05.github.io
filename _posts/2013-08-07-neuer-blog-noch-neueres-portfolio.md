@@ -7,6 +7,7 @@ tags:
     - Showcase
     - node.js
 coverimage: https://scn.cx/assets/img/portfolio.jpg
+coverfillcolor: E8E8E8
 ---
 Mein Zweiter Versuch ein Responsive Webdesign auf die Beine zu stellen ist vielleicht nicht so aufwendig wie die Website der [*Electronic Music Friends*](/article/electronic-music-friends-die-erste), aber dafür schön einfach gehalten.
 

@@ -7,6 +7,7 @@ tags:
     - JavaScript
     - ShowCase
 coverimage: https://scn.cx/assets/img/emf.jpg
+coverfillcolor: E8E8E8
 ---
 Mein Erster Versuch an Responsive Webdesign scheint mir in meinen Augen ganz Gut gelungen zu sein. Es handelt sich hierbei um den Webauftritt des Vereins [Electronic Music Friends e.V.](http://electronic-music-friends.org/)
 

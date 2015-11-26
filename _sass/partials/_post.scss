@@ -35,11 +35,11 @@ a {
     color: #000;
     transition: color .2s ease-out;
     z-index: 1;
-    @include horizontal-text-shadow();
-    @include linear-gradient(to bottom, transparent 50%, rgba(0, 0, 0, 0.6) 50%);
     background-repeat: repeat-x;
     background-size: 2px 2px;
     background-position: 0 1em;
+    @include horizontal-text-shadow();
+    @include linear-gradient(transparent 50%, rgba(0, 0, 0, 0.6) 50%);
 
     &:hover {
         color: #383838;
@@ -121,5 +121,16 @@ blockquote > :last-child {
     h1 {
         color: $base-font-color;
         margin-bottom: $content-padding;
+    }
+}
+
+.post-cover {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 2 * $content-padding;
+
+    &.post-cover-svg {
+        background-origin: content-box;
     }
 }

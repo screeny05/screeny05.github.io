@@ -1,17 +1,14 @@
-<footer class="site-footer">
-    <div class="content-maxwidth">
+<div class="site-footer-container content-padding content-border-top">
+    <footer class="site-footer content-maxwidth">
         <h2 class="footer-heading">{{ site.title }}</h2>
-        <p>{{ site.description }}</p>
-
-        <ul class="contact-list">
-          <li>{{ site.title }}</li>
-          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+        <p class="footer-text small">
+            {{ site.description }}<br/>
+            All content licensed under the <a href="http://creativecommons.org/licenses/by-sa/4.0/legalcode">CC BY-SA 4.0.</a><br>
+            &copy; {{ site.time | date: '%Y' }}, Sebastian Langer
+        </p>
+        <ul class="footer-menu nav nav-simple">
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
         </ul>
-        <ul class="social-media-list">
-          {% if site.github_username %}<li>{{ site.github_username }}</li>{% endif %}
-          {% if site.twitter_username %}<li>{{ site.twitter_username }}</li>{% endif %}
-        </ul>
-    </div>
-</footer>
-
-</footer>
+    </footer>
+</div>

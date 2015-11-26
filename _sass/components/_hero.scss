@@ -1,7 +1,7 @@
 .hero {
     position: relative;
     padding: 2rem 0;
-    background: rebeccapurple;
+    background: $new-orleans;
     background-size: cover;
     background-position: center center;
     color: #fff;
@@ -30,17 +30,20 @@
     &.hero-stars:before {
         top: 0;
         background-image: url('/assets/img/dish.svg');
-        @include calc(background-size, 7rem, "6rem + 5vw");
         background-repeat: no-repeat;
         background-position: bottom center;
+        @include calc(background-size, 7rem, "6rem + 5vw");
     }
 
-    &.hero-stars:after {
+    &.hero-terrain:after {
         height: 2rem;
         background-image: url('/assets/img/terrain.svg');
         background-repeat: repeat-x;
         background-position: top center;
         z-index: 1;
+        top: 0;
+        bottom: auto;
+        transform: rotateX(-180deg);
     }
 }
 
@@ -48,13 +51,12 @@
 .hero-logo {
     display: inline-block;
     color: #fff;
-    @include filter(drop-shadow(0 0 15px rgba(#000, .6)));
 
     .logo-title {
         margin: 0 auto;
-        font-weight: 400;
-        font-family: monospace;
-        letter-spacing: -.2rem;
+        font-weight: 600;
+        font-family: $display-font-family;
+        letter-spacing: .2rem;
         @include calc(font-size, 5rem, "4rem + 2vw");
         @include calc(line-height, 5rem, "4rem + 2vw");
     }

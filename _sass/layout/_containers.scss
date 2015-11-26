@@ -1,16 +1,77 @@
-.row-2-padding > div:first-child {
-    padding-right: $content-padding / 2;
-}
-.row-2-padding > div:last-child {
-    padding-left: $content-padding / 2;
-}
+.row-2-padding {
+    > :first-child {
+        padding-right: $content-padding / 2;
+    }
+    > :last-child {
+        padding-left: $content-padding / 2;
+    }
 
+}
+.content-big-padding .row-2-padding {
+    > :first-child {
+        padding-right: $content-padding;
+    }
+    > :last-child {
+        padding-left: $content-padding;
+    }
+}
 .content-padding {
     padding: $content-padding;
+}
+
+.content-big-padding {
+    padding: $content-padding * 2 $content-padding;
 }
 
 .content-maxwidth {
     display: block;
     max-width: $content-max-width;
     margin: 0 auto;
+}
+
+.content-margin {
+    margin-bottom: $content-padding;
+}
+
+.content-serif {
+    font-family: $text-font-family;
+}
+
+.content-accent {
+    background: $froly;
+    color: $background-color;
+    border-bottom: 1rem solid rgba($main-color, .1);
+}
+
+.content-border {
+    border-bottom: $content-border;
+}
+
+.content-border-top {
+    border-top: $content-border;
+}
+
+
+.content-columns {
+    @include columns(2);
+}
+
+@media screen and(max-width: $content-break-width) {
+    @for $i from 1 through $grid-columns {
+        .row-break .col-#{$i} {
+            width: 100%;
+        }
+    }
+
+    .row-break.row-2-padding {
+        > :first-child {
+            padding-right: 0;
+            padding-bottom: $content-padding / 2;
+        }
+
+        > :last-child {
+            padding-left: 0;
+            padding-top: $content-padding / 2;
+        }
+    }
 }

@@ -28,14 +28,16 @@ $grid-columns: 12;
 
 
 $base-font-size: 16px;
-$base-line-height: 1.4rem;
+$base-line-height: 1.4em;
 $base-font-color: $main-color;
 $heading-font-color: $accent-color;
 $small-font-color: desaturate(lighten($main-color, 30), 30%);
 $small-font-size: .8rem;
+$big-font-size: 2rem;
+$big-font-weight: 300;
 $code-font-size: .8rem;
 
-$display-font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$display-font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $text-font-family: 'Merriweather', 'Times New Roman', serif;
 $smallcaps-font-family: 'Alegreya SC', serif;
 $code-font-family: monospace;
@@ -45,7 +47,11 @@ $heading-font-family: $display-font-family;
 
 $content-border-radius: .3rem;
 $content-padding: 1rem;
-$content-max-width: 720px;
+$content-max-width: 1100px;
+$content-break-width: 660px;
+$article-content-max-width: 720px;
+$content-border-color: #D3D5D6;
+$content-border: 1px solid $content-border-color;
 
 
 $global-font-size-breakpoints: 500px 600px 700px;

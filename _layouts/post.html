@@ -1,5 +1,6 @@
 ---
 layout: default
+class: page-article
 ---
 
 {% assign m = page.date | date: "%-m" %}
@@ -30,15 +31,16 @@ layout: default
 {% endcase %}
 
 <article class="post">
-    <div class="post-cover" style="width:100%;height: 400px;{% if page.coverimage %}background-image: url('{{ page.coverimage }}');{% endif %}{% if page.coverfillcolor %}background-size: auto;background-color:#{{ page.coverfillcolor }};{% endif %}"></div>
-    <header class="post-header">
-        <h1>{{ page.title }}</h1>
-        <p class="post-meta small">
-            <time class="meta-time" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d" }}. {{ m }} {{ page.date | date: "%Y" }}</time>
-            •
-            <span class="meta-author">{{ page.author }}</span>
-        </p>
-    </header>
+    <div class="post-cover {% if page.coverimage contains '.svg' %}post-cover-svg{% endif %}" style="width:100%;height: 400px;{% if page.coverimage %}background-image: url('{{ page.coverimage }}');{% endif %}{% if page.coverfillcolor %}background-color:#{{ page.coverfillcolor }};{% endif %}">
+        <header class="post-header">
+            <h1>{{ page.title }}</h1>
+            <p class="post-meta small">
+                <time class="meta-time" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%-d" }}. {{ m }} {{ page.date | date: "%Y" }}</time>
+                •
+                <span class="meta-author">{{ page.author }}</span>
+            </p>
+        </header>
+    </div>
 
     <div class="post-content">
         {{ content }}

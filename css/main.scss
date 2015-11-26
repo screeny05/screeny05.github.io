@@ -21,4 +21,5 @@
 .site-header { @import "partials/header"; }
 .site-footer { @import "partials/footer"; }
 
-.post-overview { @import "pages/post-overview"; }
+.page-article  { @import "pages/article"; }
+.page-home     { @import "pages/home"; }

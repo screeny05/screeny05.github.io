@@ -1,0 +1,13 @@
+& {
+    @include flexbox();
+    @include flex-wrap(wrap);
+    @include align-items(center);
+}
+
+.footer-heading {
+    margin: 0 $content-padding 0 0;
+}
+
+.footer-text {
+    @include flex(1 1 auto);
+}

@@ -225,7 +225,21 @@
        object-fit: $fit;
 }
 
+@mixin columns($val...) {
+    -webkit-columns: $val;
+       -moz-columns: $val;
+            columns: $val;
+}
+
 .va-center {
     display: inline-block;
     vertical-align: middle;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
 }
