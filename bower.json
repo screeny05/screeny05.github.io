@@ -1,0 +1,21 @@
+{
+  "name": "screeny05.github.io",
+  "homepage": "https://scn.cx/",
+  "authors": [
+    "Sebastian Langer <sl@scn.cx>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}
