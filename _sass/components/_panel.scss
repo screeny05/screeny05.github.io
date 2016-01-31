@@ -1,0 +1,35 @@
+.panel-container {
+    padding-left: $content-padding / 2;
+    padding-right: $content-padding / 2;
+
+    .panel {
+        padding: $content-padding / 2;
+
+        @media (min-width: $viewport-lg) {
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+    }
+}
+
+
+.panel {
+    &-title {
+        margin-bottom: .5rem;
+        text-align: center;
+        font-weight: 400;
+    }
+    &-list {
+        list-style: none;
+        margin: 0;
+    }
+    .list-element {
+        .element-title {
+            display: block;
+        }
+    }
+}

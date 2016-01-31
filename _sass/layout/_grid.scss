@@ -4,21 +4,77 @@
     @include clearfix();
 }
 
-%col-x {
+.container {
+    max-width: $viewport-lg;
+    margin: 0 auto;
+}
+
+[class^="col-"],
+[class*=" col-"] {
     position: relative;
     display: block;
     float: left;
 }
 
+.visible-xs { display: block; }
+.hidden-xs { display: none; }
+
+@media (min-width: $viewport-sm) {
+    .visible-sm { display: block; }
+    .hidden-sm  { display: none; }
+}
+@media (min-width: $viewport-md) {
+    .visible-md { display: block; }
+    .hidden-md  { display: none; }
+}
+@media (min-width: $viewport-lg) {
+    .visible-lg { display: block; }
+    .hidden-lg  { display: none; }
+}
+
+
+// grid-xs
 @for $i from 1 through $grid-columns {
     $cell-width: 100% / $grid-columns * $i;
 
-    .col-#{$i} {
-        @extend %col-x;
+    .col-xs-#{$i} {
         width: $cell-width;
     }
 
     .span-#{$i} {
         margin-left: $cell-width;
+    }
+}
+
+// grid-sm
+@for $i from 1 through $grid-columns {
+    $cell-width: 100% / $grid-columns * $i;
+
+    @media (min-width: $viewport-sm) {
+        .col-sm-#{$i} {
+            width: $cell-width;
+        }
+    }
+}
+
+// grid-md
+@for $i from 1 through $grid-columns {
+    $cell-width: 100% / $grid-columns * $i;
+
+    @media (min-width: $viewport-md) {
+        .col-md-#{$i} {
+            width: $cell-width;
+        }
+    }
+}
+
+// grid-lg
+@for $i from 1 through $grid-columns {
+    $cell-width: 100% / $grid-columns * $i;
+
+    @media (min-width: $viewport-lg) {
+        .col-lg-#{$i} {
+            width: $cell-width;
+        }
     }
 }

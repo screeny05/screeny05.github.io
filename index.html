@@ -3,37 +3,50 @@ layout: default
 class: page-home
 ---
 
-
-<div class="content-accent content-big-padding content-margin">
-    <p class="big center content-maxwidth content-big-padding">
-        <i>Hi there traveler!</i><br/>
-        This site is the personal playground of Sebastian &ndash; that's me!
-    </p>
-</div>
-
-<p class="big content-maxwidth content-margin">
-    I use it to experiment and have fun with the web. Aside from that, it's also my blog which mostly contains tech-stuff.
-</p>
-
-<div class="content-accent content-big-padding">
-    <div class="content-maxwidth row row-2-padding row-break">
-        <p class="justify content-serif col-6">
-            I'm currently working at <a href="https://www.caseking.de/">Caseking</a> as web-developer. Previously i finished my apprenticeship as IT-Specialist.
-            At the moment in the search for fun i'm looking into different stuff like cooking, reading, typography, web-design and paintball.
-            Also i am living with my girlfriend in the city of Berlin.
-        </p>
-        <p class="justify content-serif col-6">
-            The pure existence of this site doesn't make me a blogger, but i try to write down everything i learn and experience.
-            It's mostly about the things i find interesting &mdash; which doesn't mean i'm not the only one who does.
-            Also you can use it to check out some of the stuff i've done / am doing.
-        </p>
+<div class="container row has-padding panel-container">
+    <div class="panel col-xs-12 col-sm-6 col-lg-3">
+        <h3 class="panel-title">Pens</h3>
+        <div class="dash dash-small"></div>
+        <ul class="panel-body panel-list js-target-codepen"></ul>
+    </div>
+    <div class="panel col-xs-12 col-sm-6 col-lg-3">
+        <h3 class="panel-title">Projects</h3>
+        <div class="dash dash-small"></div>
+        <ul class="panel-body panel-list">
+            <li class="list-element">
+                <a class="element-title" target="_blank" href="https://github.com/screeny05/screeny05.github.io">screeny05.github.io</a>
+                <span class="element-description">This very website</span>
+            </li>
+            <li class="list-element">
+                <a class="element-title" target="_blank" href="https://github.com/screeny05/language-html-swig">language-html-swig</a>
+                <span class="element-description">Atom language support for the Swig templating engine</span>
+            </li>
+            <li class="list-element">
+                <a class="element-title" target="_blank" href="https://github.com/screeny05/dotfiles">dotfiles</a>
+                <span class="element-description">My personal dotfiles</span>
+            </li>
+            <li class="list-element">
+                <a class="element-title" target="_blank" href="https://github.com/screeny05/xmbd">xmbd</a>
+                <span class="element-description">Cross-provider media embedding with jQuery</span>
+            </li>
+        </ul>
+    </div>
+    <div class="clear has-padding hidden-xs visible-sm hidden-lg"></div>
+    <div class="panel col-xs-12 col-sm-6 col-lg-3">
+        <h3 class="panel-title">Posts</h3>
+        <div class="dash dash-small"></div>
+        <ul class="panel-body panel-list">
+            {% for post in site.posts limit:6 %}
+                <li class="list-element">
+                    <a class="element-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                    <span class="element-description">{{ post.categories[0] }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="panel col-xs-12 col-sm-6 col-lg-3">
+        <h3 class="panel-title">Last.fm</h3>
+        <div class="dash dash-small"></div>
+        <ul class="panel-body panel-list js-target-lastfm"></ul>
     </div>
 </div>
-
-<ul class="nav nav-gallery">
-    <li><a href="/blog/"><span class="element-title">blog</span></a></li>
-    <li><a href="https://github.com/{{ site.github_username }}"><span class="element-title">github</span></a></li>
-    <li><a href="http://codepen.io/{{ site.codepen_username }}/"><span class="element-title">codepen</span></a></li>
-    <li><a href="https://www.linkedin.com/in/{{ site.linkedin_username }}"><span class="element-title">linkedin</span></a></li>
-    <li><a href="mailto:{{ site.email }}"><span class="element-title">contact</span></a></li>
-</ul>

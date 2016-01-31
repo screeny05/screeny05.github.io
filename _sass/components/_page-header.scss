@@ -1,0 +1,23 @@
+.page-header {
+    display: inline-block;
+    margin: 0 auto;
+
+    .header-title,
+    .header-subtitle {
+        margin: 0;
+        font-weight: 300;
+    }
+
+    .header-title {
+        color: $color-primary;
+        font-size: 5rem;
+        line-height: 1.2em;
+    }
+
+    .header-subtitle {
+        color: $color-secondary;
+        font-size: 3rem;
+        font-weight: normal;
+        line-height: 1.2em;
+    }
+}

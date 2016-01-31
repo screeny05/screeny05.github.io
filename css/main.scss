@@ -16,10 +16,14 @@
 @import "components/hero";
 @import "components/lists";
 @import "components/hamburger";
+@import "components/page-header";
+@import "components/panel";
+@import "components/dash";
 
-.post        { @import "partials/post"; }
-.site-header { @import "partials/header"; }
-.site-footer { @import "partials/footer"; }
+.post         { @import "partials/post"; }
+.site-header  { @import "partials/header"; }
+.site-footer  { @import "partials/footer"; }
+.site-wrapper { @import "partials/wrapper"; }
 
 .page-article  { @import "pages/article"; }
 .page-home     { @import "pages/home"; }

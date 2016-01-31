@@ -6,7 +6,7 @@
     visibility: hidden;
 }
 
-@mixin horizontal-text-shadow($color: $background-color, $count: 3) {
+@mixin horizontal-text-shadow($color: $color-background, $count: 3) {
     $shadows: ();
     $shadows: append($shadows, 0  1px 0 $color, comma);
     $shadows: append($shadows, 0 -1px 0 $color, comma);
@@ -242,4 +242,8 @@
 
 .pull-right {
     float: right;
+}
+
+.has-padding {
+    padding: $content-padding;
 }

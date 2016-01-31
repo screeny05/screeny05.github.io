@@ -1,28 +1,76 @@
-let ready = fn => document.readyState !== 'loading' ? fn() : document.addEventListener('DOMContentLoaded', fn);
-let jsonp = (url, fn) => {
-    let fnName = Math.floor(Math.random() * 1000);
+let $ = {
+    ready(fn){
+        if(document.readyState === 'loading'){
+            return fn();
+        }
+        document.addEventListener('DOMContentLoaded', fn);
+    },
 
-    url = `https://jsonp.afeld.me/?url=${window.encodeURIComponent(url)}&callback=${fnName}`;
+    jsonp(url, fn, options = {}){
+        options.useProxy = options.useProxy === true ? true : false;
+        options.callbackParam = options.callbackParam || 'callback';
 
-    let $head = document.getElementsByTagName('head')[0];
-    let $script = document.createElement('script');
-    $script.type= 'text/javascript';
-    $script.src = url;
+        let fnName = 'cb' + Math.floor(Math.random() * 1000);
 
-    window[fnName] = data => {
-        fn(data);
-        delete window[fnName];
-        $script = null;
-        $head.removeChild($script);
-    };
+        if(options.useProxy){
+            url = `https://jsonp.afeld.me/?url=${window.encodeURIComponent(url)}&callback=${fnName}`;
+        } else {
+            url = (url.indexOf('?') === -1 ? url + '?' : url + '&') + options.callbackParam + '=' + fnName;
+        }
 
-    $head.appendChild($script);
-}
+        let $head = document.getElementsByTagName('head')[0];
+        let $script = document.createElement('script');
+        $script.type= 'text/javascript';
+        $script.src = url;
 
-ready(function(){
-    let requestUrl = 'http://cpv2api.com/pens/popular/screeny05';
-    requestUrl =
-    window.onCodepenData = data => {
-        console.log(data);
-    };
+        window[fnName] = data => {
+            fn(data);
+            delete window[fnName];
+            $head.removeChild($script);
+            $script = null;
+        };
+
+        $head.appendChild($script);
+        return fnName;
+    },
+
+    stripHtml(html){
+        let divElement = document.createElement('div');
+        divElement.innerHTML = html;
+        return divElement.textContent || divElement.innerText || "";
+    }
+};
+
+let renderListElement = function(title, description, url){
+    let listElement = document.createElement('li');
+    listElement.classList.add('list-element');
+
+    let titleElement = document.createElement('a');
+    titleElement.classList.add('element-title');
+    titleElement.href = url;
+    titleElement.textContent = title;
+
+    let descriptionElement = document.createElement('span');
+    descriptionElement.classList.add('element-description');
+    descriptionElement.textContent = $.stripHtml(description);
+
+    listElement.appendChild(titleElement);
+    listElement.appendChild(descriptionElement);
+
+    return listElement;
+};
+
+const $codepenList = document.querySelector('.js-target-codepen');
+const $lastfmList  = document.querySelector('.js-target-lastfm');
+const LIST_LIMIT = 6;
+
+$.ready(function(){
+    $.jsonp('http://cpv2api.com/pens/popular/screeny05', data => data.data.slice(0, LIST_LIMIT).forEach(pen => {
+        $codepenList.appendChild(renderListElement(pen.title, pen.details ? pen.details : '—', pen.link));
+    }), {
+        useProxy: true
+    });
+    $.jsonp('https://ws.audioscrobbler.com/2.0/?format=json&callback=_&api_key=8ec8e910eba21826608967bcdefb2343&method=user.getWeeklyTrackChart&user=screeny05', data => data.weeklytrackchart.track.slice(0, LIST_LIMIT).forEach(track => {
+        $lastfmList.appendChild(renderListElement(track.name, '— ' + track.artist['#text'], track.url));
+    }));
 });

@@ -45,10 +45,11 @@ textarea:focus {
 html,
 body {
     color: $base-font-color;
-    background: $background-color;
+    background: $color-background;
     font-family: $base-font-family;
     font-size: $base-font-size;
     line-height: $base-line-height;
+    padding: $content-padding;
     -webkit-text-size-adjust: 100%;
        -moz-text-size-adjust: 100%;
         -ms-text-size-adjust: 100%;

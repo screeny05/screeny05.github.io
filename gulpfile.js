@@ -6,7 +6,8 @@ var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 
 var jsPaths = [
-    'js/*/**.js'
+    'js/*/**.js',
+    'js/**.js'
 ];
 
 gulp.task('js', function(){

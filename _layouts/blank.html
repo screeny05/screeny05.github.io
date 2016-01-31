@@ -2,6 +2,8 @@
 <html lang="{{ page.lang }}">
 {% include head.html %}
 <body {% if page.class %}class="{{ page.class }}"{% endif %}>
-    {{ content }}
+    <div class="site-wrapper">
+        {{ content }}
+    </div>
 </body>
 </html>

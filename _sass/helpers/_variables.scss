@@ -12,19 +12,36 @@ $breaker-bay: #659FA6;
 $new-orleans: #F2D6A2;
 $froly:       #F2786D;
 
-$white: #fefefe;
+// colors - own
+$color-alabaster: #f7f7f7;
+$color-shark: #282931;
+$color-elfgreen: #09907A;
+$color-atoll: #087586;
+$color-gray: lighten($color-shark, 35%);
+$color-gray-dark: lighten($color-shark, 10%);
+$color-primary-gray: mix($color-elfgreen, $color-gray, 30%);
+$color-black: darken($color-shark, 4%);
+
+$white: $color-alabaster;
 $gallery: #efefef;
 
 
 // base
+$color-primary: $color-elfgreen;
+$color-secondary: $color-atoll;
+$color-background: $color-gray-dark;
 $main-color: $big-stone;
 $accent-color: $cerise-red;
-$background-color: lighten($new-orleans, 19);
+$wrapper-color: $color-alabaster;
+$wrapper-background: $color-shark;
 $code-background-color: #f6f6f3;
 $code-text-color: #002b36;
 
-
+// scaffolding
 $grid-columns: 12;
+$viewport-sm: 768px;
+$viewport-md: 992px;
+$viewport-lg: 1200px;
 
 
 $base-font-size: 16px;
@@ -37,12 +54,13 @@ $big-font-size: 2rem;
 $big-font-weight: 300;
 $code-font-size: .8rem;
 
-$display-font-family: 'Fira Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$display-font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $text-font-family: 'Merriweather', 'Times New Roman', serif;
 $smallcaps-font-family: 'Alegreya SC', serif;
 $code-font-family: monospace;
 $base-font-family: $display-font-family;
 $heading-font-family: $display-font-family;
+$heading-color: $color-primary;
 
 
 $content-border-radius: .3rem;
@@ -54,7 +72,7 @@ $content-border-color: #D3D5D6;
 $content-border: 1px solid $content-border-color;
 
 
-$global-font-size-breakpoints: 500px 600px 700px;
+$global-font-size-breakpoints: $viewport-sm $viewport-md $viewport-lg;
 
 
 
