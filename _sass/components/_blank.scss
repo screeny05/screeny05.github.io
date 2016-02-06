@@ -1,0 +1,13 @@
+.blank {
+    background: #9a9a9a;
+    height: 1ex;
+    border-radius: 3px;
+    display: inline-block;
+    max-width: 100%;
+}
+
+@for $i from 1 through 10 {
+    .blank-#{$i} {
+        width: $i * 10%;
+    }
+}

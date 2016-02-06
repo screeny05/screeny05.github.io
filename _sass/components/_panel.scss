@@ -20,7 +20,6 @@
 .panel {
     &-title {
         margin-bottom: .5rem;
-        text-align: center;
         font-weight: 400;
     }
     &-list {
@@ -28,8 +27,24 @@
         margin: 0;
     }
     .list-element {
-        .element-title {
+        margin-top: 5px;
+        @include flexbox();
+        @include align-items(stretch);
+
+        .element-title,
+        .element-description {
             display: block;
+        }
+
+        .element-title {
+            text-align: right;
+            padding-right: 10px;
+            @include flex(1 1 45%);
+        }
+
+        .element-description {
+            padding-left: 10px;
+            @include flex(1 1 55%);
         }
     }
 }

@@ -34,6 +34,12 @@ let $ = {
         return fnName;
     },
 
+    removeChildren(el){
+        while(el.firstChild){
+            el.removeChild(el.firstChild);
+        }
+    },
+
     stripHtml(html){
         let divElement = document.createElement('div');
         divElement.innerHTML = html;
@@ -66,11 +72,17 @@ const LIST_LIMIT = 6;
 
 $.ready(function(){
     $.jsonp('http://cpv2api.com/pens/popular/screeny05', data => data.data.slice(0, LIST_LIMIT).forEach(pen => {
-        $codepenList.appendChild(renderListElement(pen.title, pen.details ? pen.details : '—', pen.link));
+        $.removeChildren($codepenList);
+        setTimeout(() => {
+            $codepenList.appendChild(renderListElement(pen.title, pen.details ? pen.details : '—', pen.link));
+        }, 0);
     }), {
         useProxy: true
     });
-    $.jsonp('https://ws.audioscrobbler.com/2.0/?format=json&callback=_&api_key=8ec8e910eba21826608967bcdefb2343&method=user.getWeeklyTrackChart&user=screeny05', data => data.weeklytrackchart.track.slice(0, LIST_LIMIT).forEach(track => {
-        $lastfmList.appendChild(renderListElement(track.name, '— ' + track.artist['#text'], track.url));
+    $.jsonp('https://ws.audioscrobbler.com/2.0/?format=json&callback=_&api_key=8ec8e910eba21826608967bcdefb2343&method=user.getRecentTracks&user=screeny05', data => data.recenttracks.track.slice(0, LIST_LIMIT).forEach(track => {
+        $.removeChildren($lastfmList);
+        setTimeout(() => {
+            $lastfmList.appendChild(renderListElement(track.name, track.artist['#text'], track.url));
+        }, 0);
     }));
 });
